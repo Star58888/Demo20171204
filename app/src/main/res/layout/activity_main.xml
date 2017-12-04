@@ -12,13 +12,13 @@
         android:id="@+id/fragment"
         android:name="com.star.demo20171204.FragmentA"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="200dp"
         android:layout_weight="1" />
 
     <fragment
         android:id="@+id/fragment2"
         android:name="com.star.demo20171204.FragmentB"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="200dp"
         android:layout_weight="1" />
 </LinearLayout>
