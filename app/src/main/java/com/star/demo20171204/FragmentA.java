@@ -3,10 +3,13 @@ package com.star.demo20171204;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.TextView;
 
 
 /**
@@ -67,6 +70,19 @@ public class FragmentA extends Fragment {
         return inflater.inflate(R.layout.fragment_a, container, false);
     }
 
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        final TextView tv = (TextView) getView().findViewById(R.id.textView);
+        Button btn = (Button) getView().findViewById(R.id.button);
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                tv.setText("Hello World");
+            }
+        });
+    }
+
     // TODO: Rename method, update argument and hook method into UI event
     public void onButtonPressed(Uri uri) {
         if (mListener != null) {
@@ -80,8 +96,8 @@ public class FragmentA extends Fragment {
         if (context instanceof OnFragmentInteractionListener) {
             mListener = (OnFragmentInteractionListener) context;
         } else {
-//            throw new RuntimeException(context.toString()
-//                    + " must implement OnFragmentInteractionListener");
+            // throw new RuntimeException(context.toString()
+            //        + " must implement OnFragmentInteractionListener");
         }
     }
 
